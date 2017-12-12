@@ -19,7 +19,12 @@ public class pongMouvment : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         score = score + 1;
+        if (score >= 10 && score < 100 )
+        {
+            scoreUI.fontSize = 160;
+        }
         scoreUI.text = score.ToString();
+        speed = speed * 1.1f;
 
     }
 }

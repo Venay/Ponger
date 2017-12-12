@@ -122,8 +122,9 @@ GameObject:
   - component: {fileID: 314758747}
   - component: {fileID: 314758746}
   - component: {fileID: 314758749}
-  - component: {fileID: 314758745}
   - component: {fileID: 314758748}
+  - component: {fileID: 314758745}
+  - component: {fileID: 314758750}
   m_Layer: 0
   m_Name: ponger
   m_TagString: Untagged
@@ -142,7 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed15ec00ed98d546950b9133b3b5c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 40
+  rotationSpeed: 20
+  dragRotationSpeed: 20
 --- !u!212 &314758746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -381,6 +383,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &314758750
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314758744}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.23, y: 10.16}
+  m_EdgeRadius: 0
 --- !u!1 &589480400
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,10 +683,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 202
+    m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 210
     m_Alignment: 4
     m_AlignByGeometry: 0
