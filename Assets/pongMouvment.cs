@@ -16,15 +16,20 @@ public class pongMouvment : MonoBehaviour {
         rb.AddForce(Vector2.up*speed);
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        score = score + 1;
-        if (score >= 10 && score < 100 )
+        if (col.gameObject.tag == "Ponger")
         {
-            scoreUI.fontSize = 160;
+            score = score + 1;
+            if (score >= 10 && score < 100)
+            {
+                scoreUI.fontSize = 160;
+            }
+            scoreUI.text = score.ToString();
+            speed = speed * 1.1f;
+            Debug.Log(transform.position);
         }
-        scoreUI.text = score.ToString();
-        speed = speed * 1.1f;
+        
 
     }
 }
