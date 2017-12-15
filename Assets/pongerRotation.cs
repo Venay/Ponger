@@ -17,8 +17,19 @@ public class pongerRotation : MonoBehaviour {
             //Debug.Log(rotationDirection);
 
             
+        } else
+        {
+            Debug.Log(transform.localRotation);
+            Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime*dragRotationSpeed);
+
         }
 
+        
+
+        /*
         if (Input.anyKey)
         {
             float rotX = Input.GetAxis("Mouse X") * dragRotationSpeed; // * Mathf.Deg2Rad;
@@ -35,6 +46,7 @@ public class pongerRotation : MonoBehaviour {
                 rotationDirection = 1;
             }
         }
+        */
     }
 
     /*
